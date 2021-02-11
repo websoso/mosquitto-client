@@ -1,6 +1,6 @@
 package main
 
-import "github.com/onesosoo/mosquitto-client/mc"
+import "github.com/websoso/mosquitto-client/mc"
 
 func main() {
 
