@@ -3,6 +3,7 @@ package mc
 import "fmt"
 
 type Operation struct {
+	// 测试
 	name string
 }
 
