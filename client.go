@@ -2,7 +2,6 @@ package mc
 
 import (
 	"encoding/json"
-	"fmt"
 	paho "github.com/eclipse/paho.mqtt.golang"
 )
 
@@ -30,7 +29,6 @@ func NewClient(option *Option, fallback Handler) *Client {
 
 func (c *Client) Send(topic, message string) {
 	wrapper := c.converter.encode(message)
-	fmt.Println(len(wrapper.messageList))
 	for _, m := range wrapper.messageList {
 		jsonMessage, _ := json.Marshal(m)
 		token := c.pahoClient.Publish(topic, byte(0), false, string(jsonMessage))
